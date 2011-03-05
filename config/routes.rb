@@ -1,7 +1,14 @@
-Vouch::Application.routes.draw do
+Vouch::Application.routes.draw do    
+  match '/auth/:provider/callback' => 'authentications#create'
+  devise_for :users
+  resources :sites               
+  resources :authentications
+
+  #  match '/sites/:url' => 'sites#show'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  root :to => 'static#home'
+  root :to => 'sites#index'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
