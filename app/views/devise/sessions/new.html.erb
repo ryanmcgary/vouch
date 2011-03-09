@@ -1,0 +1,29 @@
+<h2>Sign in</h2>
+<% if !@application_layout.nil? %>
+<a href="/auth/twitter" class="auth_provider" rel="window800">
+  <%= image_tag "authbuttons/twitter_64.png", :size => "64x64", :alt => "Twitter" %>
+  Twitter
+</a>
+<a href="/auth/facebook" class="auth_provider" rel="window800">
+  <%= image_tag "authbuttons/facebook_64.png", :size => "64x64", :alt => "Facebook" %>
+  Facebook
+</a>
+
+<% else %>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <p><%= f.label :email %><br />
+  <%= f.text_field :email %></p>
+
+  <p><%= f.label :password %><br />
+  <%= f.password_field :password %></p>
+
+  <% if devise_mapping.rememberable? -%>
+    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+  <% end -%>
+
+  <p><%= f.submit "Sign in" %></p>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
+<% end %>

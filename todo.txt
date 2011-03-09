@@ -1,0 +1,57 @@
+- Make permalinks work > done, deprecated
+- Make javascript widget work
+- Add autofill user info (depending on login service)
+- Add linkedin login
+
+Tasks
+x	iframe should open link in popup window 
+x	after popup window closes, iframe window should refresh
+x	when logging in through embed, devise should redirect to a callback that closes window on success
+	create url model
+	make url model a resource of site site/1/url/index
+
+%	create all routes/pages on rails
+	head
+		log in
+		start post page
+		edit post settings 
+	list                
+		All reviews
+		vouch.com/site/17/page/12?layout=embed&version=forum
+		Single review
+		vouch.com/site/17/page/12/post/32?layout=embed&version=forum
+		%	Pair javascript/partial to list items and poll/push refresh them		
+% install audiojs.zip
+% integrate twilio controller
+% let each site have its own list of required fields
+% dynamically pull down thumbnails/user info from authentication services
+? convert site to mongoid
+
+Structure
+ div > replace > vouchframe > OnTrigger reload
+ iframe > Login, Submit review > Click to login           
+ div:replace > vouch reviews > poll for changes
+ load partial w/ reviews
+
+
+
+
+   
+
+DOM
+-Load Widget w/ javascript
+-Load popup window
+-First registration > Add relevant info (email address)
+-After successful login 
+-	Callback should change on page DOM to Logout / Start Review
+-	Callback should close iframe   
+
+	
+//Code for permalinks:
+//Site.all.each do |c|
+  match "#{c.permalink}/edit" => 'sites#edit', :permalink => c.permalink 
+  match "#{c.permalink}(/:site)" => 'sites#show', :permalink => c.permalink
+end
+
+//Site.find_by_permalink(params[:permalink]) 
+

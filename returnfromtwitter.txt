@@ -1,0 +1,210 @@
+--- provider: facebook uid: "516322508" credentials: token: 191045274269033|697c8bc14036c3a30a7f87d2-516322508|5pRyagQlRuU1xTB4axC3e_ZlxOc user_info: nickname: ryanmcgary first_name: Ryan last_name: McGary name: Ryan McGary urls: Facebook: http://www.facebook.com/ryanmcgary Website: extra: user_hash: id: "516322508" name: Ryan McGary first_name: Ryan last_name: McGary link: http://www.facebook.com/ryanmcgary gender: male email: ryan.mcgary@gmail.com timezone: -6 locale: en_US verified: true updated_time: 2010-10-08T00:54:47+0000
+
+--- 
+provider: twitter
+uid: "14416518"
+credentials: 
+  token: 14416518-NT4SLNvoLv3sQufJnKpoiRmUN2DzMfmiJcYhGu1Q
+  secret: 4Kb4aqidXAGlD7FUX1tUUiAi66m0Z7Ej5zqRO6aULbM
+extra: 
+  access_token: !ruby/object:OAuth::AccessToken 
+    consumer: !ruby/object:OAuth::Consumer 
+      http: !ruby/object:Net::HTTP 
+        address: api.twitter.com
+        ca_file: 
+        ca_path: 
+        cert: 
+        cert_store: 
+        ciphers: 
+        close_on_empty_response: false
+        compression: 
+        curr_http_version: "1.1"
+        debug_output: 
+        enable_post_connection_check: true
+        key: 
+        newimpl: true
+        no_keepalive_server: false
+        open_timeout: 
+        port: 443
+        read_timeout: 60
+        socket: 
+        ssl_context: !ruby/object:OpenSSL::SSL::SSLContext 
+          ca_file: 
+          ca_path: 
+          cert: 
+          cert_store: 
+          client_ca: 
+          client_cert_cb: 
+          extra_chain_cert: 
+          key: 
+          options: 4095
+          servername_cb: 
+          session_get_cb: 
+          session_id_context: 
+          session_new_cb: 
+          session_remove_cb: 
+          timeout: 
+          tmp_dh_callback: 
+          verify_callback: 
+          verify_depth: 
+          verify_mode: 0
+        ssl_timeout: 
+        ssl_version: 
+        sspi_enabled: false
+        started: false
+        use_ssl: true
+        verify_callback: 
+        verify_depth: 
+        verify_mode: 0
+      http_method: :post
+      key: lWhC1EGhIfKBvoq2UF8NYA
+      options: 
+        :signature_method: HMAC-SHA1
+        :request_token_path: /oauth/request_token
+        :authorize_path: /oauth/authenticate
+        :access_token_path: /oauth/access_token
+        :proxy: 
+        :scheme: :header
+        :http_method: :post
+        :oauth_version: "1.0"
+        :site: https://api.twitter.com
+      secret: wIKOVMZx9GhRGZ6Cq5JNAXSGhoJ80yVTaBlL6rt9kvI
+      uri: !ruby/object:URI::HTTPS 
+        fragment: 
+        host: api.twitter.com
+        opaque: 
+        parser: 
+        password: 
+        path: ""
+        port: 443
+        query: 
+        registry: 
+        scheme: https
+        user: 
+    params: 
+      :oauth_token: 14416518-NT4SLNvoLv3sQufJnKpoiRmUN2DzMfmiJcYhGu1Q
+      oauth_token: 14416518-NT4SLNvoLv3sQufJnKpoiRmUN2DzMfmiJcYhGu1Q
+      :oauth_token_secret: 4Kb4aqidXAGlD7FUX1tUUiAi66m0Z7Ej5zqRO6aULbM
+      oauth_token_secret: 4Kb4aqidXAGlD7FUX1tUUiAi66m0Z7Ej5zqRO6aULbM
+      :user_id: "14416518"
+      user_id: "14416518"
+      :screen_name: Ryan_McGary
+      screen_name: Ryan_McGary
+    response: !ruby/object:Net::HTTPOK 
+      body: "{\"following\":false,\"profile_background_image_url\":\"http:\\/\\/a3.twimg.com\\/a\\/1298664727\\/images\\/themes\\/theme1\\/bg.png\",\"favourites_count\":0,\"statuses_count\":50,\"profile_image_url\":\"http:\\/\\/a1.twimg.com\\/profile_images\\/1159303481\\/Sloths_normal.jpg\",\"description\":\"Co-founder Speakerwiki. Lover of Brazil & Pirarucu.\",\"status\":{\"in_reply_to_status_id_str\":null,\"text\":\"Yeah! Austin at number 2 on a top 10 list!! oh wait. http:\\/\\/bit.ly\\/dOOye3\",\"contributors\":null,\"retweeted\":false,\"in_reply_to_user_id_str\":null,\"retweet_count\":0,\"id_str\":\"40127005747847168\",\"source\":\"\\u003Ca href=\\\"http:\\/\\/www.nambu.com\\/\\\" rel=\\\"nofollow\\\"\\u003ENambu\\u003C\\/a\\u003E\",\"geo\":null,\"truncated\":false,\"created_at\":\"Tue Feb 22 19:13:18 +0000 2011\",\"place\":null,\"in_reply_to_status_id\":null,\"coordinates\":null,\"favorited\":false,\"id\":40127005747847168,\"in_reply_to_screen_name\":null,\"in_reply_to_user_id\":null},\"is_translator\":false,\"contributors_enabled\":false,\"time_zone\":\"Central Time (US & Canada)\",\"profile_text_color\":\"333333\",\"url\":\"http:\\/\\/ryanmcgary.posterous.com\",\"follow_request_sent\":false,\"profile_sidebar_fill_color\":\"DDEEF6\",\"screen_name\":\"Ryan_McGary\",\"id_str\":\"14416518\",\"profile_background_tile\":false,\"friends_count\":9,\"location\":\"Austin, TX\",\"lang\":\"en\",\"verified\":false,\"notifications\":false,\"created_at\":\"Thu Apr 17 03:55:28 +0000 2008\",\"profile_link_color\":\"0084B4\",\"listed_count\":0,\"profile_sidebar_border_color\":\"C0DEED\",\"protected\":false,\"followers_count\":15,\"name\":\"Ryan_McGary\",\"show_all_inline_media\":false,\"geo_enabled\":false,\"profile_use_background_image\":true,\"id\":14416518,\"utc_offset\":-21600,\"profile_background_color\":\"C0DEED\"}"
+      body_exist: true
+      code: "200"
+      header: 
+        date: 
+        - Fri, 04 Mar 2011 23:04:27 GMT
+        server: 
+        - hi
+        status: 
+        - 200 OK
+        x-transaction: 
+        - 1299279866-51665-42068
+        x-ratelimit-limit: 
+        - "350"
+        etag: 
+        - "\"597d4651654550fce31197e12e9e7065\""
+        last-modified: 
+        - Fri, 04 Mar 2011 23:04:27 GMT
+        x-ratelimit-remaining: 
+        - "348"
+        x-runtime: 
+        - "0.10340"
+        x-transaction-mask: 
+        - a6183ffa5f8ca943ff1b53b5644ef114
+        content-type: 
+        - application/json; charset=utf-8
+        content-length: 
+        - "1650"
+        pragma: 
+        - no-cache
+        x-ratelimit-class: 
+        - api_identified
+        x-revision: 
+        - DEV
+        expires: 
+        - Tue, 31 Mar 1981 05:00:00 GMT
+        cache-control: 
+        - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+        x-ratelimit-reset: 
+        - "1299280508"
+        set-cookie: 
+        - k=99.55.141.195.1299279866997465; path=/; expires=Fri, 11-Mar-11 23:04:26 GMT; domain=.twitter.com
+        - guest_id=129927986700056900; path=/; expires=Sun, 03 Apr 2011 23:04:27 GMT
+        - lang=en; path=/
+        - _twitter_sess=BAh7CToMY3NyZl9pZCIlZTIyN2U4YWQ0ZWY1ZWIyYTgyYWM2ZTU5NTZiYjQ4%250AYTc6D2NyZWF0ZWRfYXRsKwiCbB2DLgE6B2lkIiVmYTEyMGFhNDFkM2Y1MWM0%250AMjhlODMxYTA0ZTk3YjFlOSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%250ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%253D%253D--61f6ecf5971aecf65aeb7b1358b07a20612fbcae; domain=.twitter.com; path=/; HttpOnly
+        vary: 
+        - Accept-Encoding
+        connection: 
+        - close
+      http_version: "1.1"
+      message: OK
+      read: true
+      socket: 
+    secret: 4Kb4aqidXAGlD7FUX1tUUiAi66m0Z7Ej5zqRO6aULbM
+    token: 14416518-NT4SLNvoLv3sQufJnKpoiRmUN2DzMfmiJcYhGu1Q
+  user_hash: 
+    following: false
+    profile_background_image_url: http://a3.twimg.com/a/1298664727/images/themes/theme1/bg.png
+    favourites_count: 0
+    statuses_count: 50
+    profile_image_url: http://a1.twimg.com/profile_images/1159303481/Sloths_normal.jpg
+    description: Co-founder Speakerwiki. Lover of Brazil & Pirarucu.
+    status: 
+      in_reply_to_status_id_str: 
+      text: Yeah! Austin at number 2 on a top 10 list!! oh wait. http://bit.ly/dOOye3
+      contributors: 
+      retweeted: false
+      in_reply_to_user_id_str: 
+      retweet_count: 0
+      id_str: "40127005747847168"
+      source: <a href="http://www.nambu.com/" rel="nofollow">Nambu</a> 
+      geo: 
+      truncated: false
+      created_at: Tue Feb 22 19:13:18 +0000 2011
+      place: 
+      in_reply_to_status_id: 
+      coordinates: 
+      favorited: false
+      id: 40127005747847168
+      in_reply_to_screen_name: 
+      in_reply_to_user_id: 
+    is_translator: false
+    contributors_enabled: false
+    time_zone: Central Time (US & Canada)
+    profile_text_color: "333333"
+    url: http://ryanmcgary.posterous.com
+    follow_request_sent: false
+    profile_sidebar_fill_color: DDEEF6
+    screen_name: Ryan_McGary
+    id_str: "14416518"
+    profile_background_tile: false
+    friends_count: 9
+    location: Austin, TX
+    lang: en
+    verified: false
+    notifications: false
+    created_at: Thu Apr 17 03:55:28 +0000 2008
+    profile_link_color: 0084B4
+    listed_count: 0
+    profile_sidebar_border_color: C0DEED
+    protected: false
+    followers_count: 15
+    name: Ryan_McGary
+    show_all_inline_media: false
+    geo_enabled: false
+    profile_use_background_image: true
+    id: 14416518
+    utc_offset: -21600
+    profile_background_color: C0DEED
+user_info: 
+  nickname: Ryan_McGary
+  name: Ryan_McGary
+  location: Austin, TX
+  image: http://a1.twimg.com/profile_images/1159303481/Sloths_normal.jpg
+  description: Co-founder Speakerwiki. Lover of Brazil & Pirarucu.
+  urls: 
+    Website: http://ryanmcgary.posterous.com
