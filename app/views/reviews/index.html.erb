@@ -16,7 +16,7 @@
 </table>
 
 <br />
-<%= link_to "Back", site_remoteurl_path(@remoteurl.site_id, @remoteurl.id) %>
+<%= link_to "Back", site_remoteurl_path(@remoteurl.site_id, @remoteurl) %>
 <% else %>  
 <h1>Listing reviews</h1>
 
@@ -27,7 +27,7 @@
     <th></th>
     <th></th>
   </tr>
-<%= link_to 'New Review', new_site_remoteurl_review_path(@remoteurl.site_id, @remoteurl.id) %>   
+<%= link_to 'New Review', new_site_remoteurl_review_path(@remoteurl.site_id, @remoteurl) %>   
 <% @remoteurl.reviews.each do |review| %>
   <tr>
     <td><%= review.name %></td>
@@ -37,5 +37,5 @@
 </table>
 
 <br />
-<%= link_to "Back", site_remoteurl_path(@remoteurl.site_id, @remoteurl.id) %>
+<%= link_to "Back", site_remoteurl_path(@remoteurl.site_id, @remoteurl) %>
 <% end %>

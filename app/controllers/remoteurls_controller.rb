@@ -1,4 +1,5 @@
 class RemoteurlsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :new, :create, :edit, :destroy, :update, :show]
   # GET /remoteurls
   # GET /remoteurls.xml
   def index
@@ -7,8 +8,23 @@ class RemoteurlsController < ApplicationController
   end
 
   def show
-    @site = Site.find(params[:site_id])  
-    @remoteurl = @site.remoteurls.find(params[:id])
+    @site = Site.find(params[:site_id])
+    if @site.remoteurls.find_by_permalink(params[:id]).nil? 
+      @remoteurl = @site.remoteurls.build(params[:remoteurl])
+      @remoteurl.content = (params[:id])
+      respond_to do |format|
+        if @remoteurl.save
+          format.html { redirect_to "/sites/#{@site.id}/remoteurls/#{@remoteurl.permalink}?layout=embed"}
+          format.xml  { render :xml => @site, :status => :created, :location => @remoteurl }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => [@site, @remoteurl].errors, :status => :unprocessable_entity }
+        end
+      end
+    else
+    @remoteurl = @site.remoteurls.find_by_permalink(params[:id])
+    end 
+    
   end
 
   def new
@@ -19,7 +35,7 @@ class RemoteurlsController < ApplicationController
   # GET /remoteurls/1/edit
   def edit
     @site = Site.find(params[:site_id])  
-    @remoteurl = @site.remoteurls.find(params[:id])
+    @remoteurl = @site.remoteurls.find_by_permalink(params[:id])
   end
 
   # POST /remoteurls
@@ -43,7 +59,7 @@ class RemoteurlsController < ApplicationController
   # PUT /remoteurls/1.xml
   def update
     @site = Site.find(params[:site_id])   
-    @remoteurl = @site.remoteurls.find(params[:id])
+    @remoteurl = @site.remoteurls.find_by_permalink(params[:id])
 
     respond_to do |format|
       if @remoteurl.update_attributes(params[:remoteurl])
@@ -60,7 +76,7 @@ class RemoteurlsController < ApplicationController
   # DELETE /remoteurls/1.xml
   def destroy
     @site = Site.find(params[:site_id])   
-    @remoteurl = @site.remoteurls.find(params[:id])
+    @remoteurl = @site.remoteurls.find_by_permalink(params[:id])
     @remoteurl.destroy
     
     respond_to do |format| 

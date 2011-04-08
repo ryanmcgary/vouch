@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <table>
   <tr>
     <td width="50">
@@ -6,6 +7,30 @@
         Settings 
         Logout
       </div>  
+    </td>
+    <td class="table-rightside">
+      <p style="text-decoration: underline;">Hello Mr. Jones</p>
+      <!-- <p>John Carter / President @ Planet Mars</p>                         -->
+      
+      <div class="optional-text">
+        <div class="text-area">
+         <textarea name="Name" class="short-text"></textarea>  
+        </div>
+        <div class="expand-bottom">
+          <a href="#" class="link">How to leave the perfect review</a>
+          <input class="vouch-button" type="submit" value="Start Call!">
+        </div>        
+      </div>
+  </tr>
+</table>
+
+
+<% else %>
+<table>
+  <tr>
+    <td width="50">
+      <img src="/images/authbuttons/linkedin.png" width="50" height="50" alt="Linkedin">
+  
     </td>
     <td class="table-rightside">
       <p style="text-decoration: underline;">Login to leave a review</p>
@@ -22,12 +47,13 @@
       </div>
   </tr>
 </table>
+<% end %>
 <!-- <p>
   <b>Content:</b>
-  <%= @remoteurl.content %> | 
-  <%= link_to "Reviews", site_remoteurl_reviews_path(@remoteurl.site_id, @remoteurl.id) %>
+  <#%= @remoteurl.content %> | 
+  <#%= link_to "Reviews", site_remoteurl_reviews_path(@remoteurl.site_id, @remoteurl.id) %>
 </p>
-<%= link_to 'Edit', edit_site_remoteurl_path(@site) %> |
-<%= link_to 'Back', site_remoteurls_path %>  -->        
+<#%= link_to 'Edit', edit_site_remoteurl_path(@site) %> |
+<#%= link_to 'Back', site_remoteurls_path %>  -->        
 
 

@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   # GET /reviews.xml
   def index
     @site = Site.find(params[:site_id])
-    @remoteurl = Remoteurl.find(params[:remoteurl_id]) 
+    @remoteurl = @site.remoteurls.find_by_permalink(params[:remoteurl_id]) 
     @reviews = @remoteurl.reviews
     
     respond_to do |format|
@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
 
   def new 
     @site = Site.find(params[:site_id])
-    @remoteurl = Remoteurl.find(params[:remoteurl_id])  
+    @remoteurl = @site.remoteurls.find_by_permalink(params[:remoteurl_id])  
     @review = @remoteurl.reviews.build
   end
 
@@ -34,7 +34,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.xml
   def create
     @site = Site.find(params[:site_id])   
-    @remoteurl = Remoteurl.find(params[:remoteurl_id])  
+    @remoteurl = @site.remoteurls.find_by_permalink(params[:remoteurl_id])  
     @review = @remoteurl.reviews.build(params[:review])
 
     respond_to do |format|

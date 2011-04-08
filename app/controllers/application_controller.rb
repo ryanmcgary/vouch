@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
       if params[:layout] == "embed"
         @application_layout = "application_embed"   
       elsif devise_controller?
-        @application_layout = "application_embed"
+        @application_layout = "application_embed"   
       else 
         "application"
       end
