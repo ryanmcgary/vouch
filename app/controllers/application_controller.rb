@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
+
   layout :layout_by_resource
     
     def layout_by_resource
@@ -11,5 +11,20 @@ class ApplicationController < ActionController::Base
       else 
         "application"
       end
-    end
+    end 
+    
+    def set_access_control_headers
+     headers['Access-Control-Allow-Origin'] = '*'
+     headers['Access-Control-Request-Method'] = '*'
+    end 
+    
+    private
+      
+      def after_sign_out_path_for(resource) 
+        if params[:layout] == "embed"
+          "/authentications/force" 
+        else
+          super
+        end
+      end
 end

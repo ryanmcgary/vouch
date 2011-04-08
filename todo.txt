@@ -7,8 +7,38 @@ Tasks
 x	iframe should open link in popup window 
 x	after popup window closes, iframe window should refresh
 x	when logging in through embed, devise should redirect to a callback that closes window on success
-	create url model
-	make url model a resource of site site/1/url/index
+x	create url model
+x	make url model a resource of site site/1/url/index
+x add remoteurl/1/reviews
+? move embed/lanyard into RemoteURL's controller
+x redirect after logout 
+x Make light css embed version
+! Create view for loggedin + remoteurl 404
+! Alter remoteurl/1 to have loggedin, logged out version
+! Pull profile pictures from services > render yaml or https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema
+! Add required profile info through omniauth
+! Integrate twilio record call function
+Tries to access nonexistant url @ site/1/remote/jones-is-the-latest-blog
+Checks for site/1/jones in content
+If jones doesn't exist > create    
+Create VAR url > in embed code so a domain can tag multiple index.html pages
+To prevent crossdomain tomfoolery: Need to parse url using javascript to determine url matches id
+
+
+	Turn site/1/remoteurl/1 into the primary iframe
+	  Unloggedin state
+    	show.html > logged out
+x    	  click to popup login > done
+    	  login to leave your review > done
+  	  show.html > logged in
+        click to logout
+        example review
+        start review button
+  Make site/1/remoteurl/1/reviews display on plugin
+    display remoteurl/1/reviews/index
+    
+	  ? needs recording in progress state
+	  ? needs recording finished state
 
 %	create all routes/pages on rails
 	head
@@ -34,6 +64,25 @@ Structure
  load partial w/ reviews
 
 
+Current    
+frame .html
+ gets embed.js
+   has JS code
+   gets full_lanyard passes version type
+     full_lanyard processes version type & shows static iframe auth?layout=embed link 
+       login opens window trying to access protected "closewindow" page
+   find/replaces div sw_3 with content from full_lanyard      
+
+New    
+frame .html
+ gets embed.js
+   has JS code
+1.  gets full_lanyard passes site.id, remoteurl.id, layout?=type
+     full_lanyard processes version type & shows static iframe auth?layout=embed link 
+       login opens window trying to access protected "closewindow" page
+   find/replaces div sw_3 with content from full_lanyard
+2.  gets site.id/remoteurl.id/reviews, layout?=type
+   find/replaces div "something" with content from reviews
 
 
    

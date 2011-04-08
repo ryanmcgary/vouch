@@ -1,0 +1,26 @@
+<h1>Listing remoteurls</h1>
+
+<table>
+  <tr>
+    <th>Site</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @site.remoteurls.each do |remoteurl| %>
+  <tr>    
+    <td><%= remoteurl.site_id %></td>
+    <td><%= remoteurl.content %></td>
+    <td><%= link_to 'Show', [@site,@remoteurl,remoteurl] %></td>
+    <td><%= link_to 'Edit', edit_site_remoteurl_path(@site, remoteurl)%></td>
+    <td><%= link_to 'Destroy', [@site,@remoteurl,remoteurl], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>                         
+
+</table>
+<br />
+
+<%= link_to 'New Remoteurl', new_site_remoteurl_path %> |
+<%= link_to 'Back', root_path %> 

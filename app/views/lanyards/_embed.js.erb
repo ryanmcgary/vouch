@@ -1,13 +1,23 @@
 <% if !params[:v].nil? %>
 
+// makes embed content visible 
+document.getElementById('iavouch_content_<%= params[:v] %>').style.visibility = 'visible';        
+document.getElementById('iavouch_<%= params[:v] %>').style.width = widget_width;
+
+// create iframe for adding new review
+var ifrm = document.createElement("IFRAME");
+ifrm.setAttribute('src', 'http://localhost:3000/sites/' + site_id + '/remoteurls/'+ remoteurl_id +'?' + layout_type);
+ifrm.style.width = 100+"%"; 
+ifrm.style.height = "183px";
+ifrm.style.border ="0";  
+ifrm.id = "coolframe"
+document.getElementById('iavouch_<%= params[:v] %>').insertBefore(ifrm, iavouch_content_3);   
+
 
 // creates var sw_3 and fills it with content from lanyard/lanyards, also escapse javascript
-var sw_<%= params[:v] %> = "<%= escape_javascript(render :partial => "lanyards/full_lanyard", :locals => {:v => params[:v]}) %>"; 
+var iavouch_<%= params[:v] %> = "<%= escape_javascript(render :partial => "lanyards/full_lanyard", :locals => {:v => params[:v]}) %>"; 
+document.getElementById('iavouch_content_<%= params[:v] %>').innerHTML=iavouch_<%= params[:v] %>;          
 
-// tells dom to replace all content with div class sw_3 with above html 
-force = document.getElementById('sw_<%= params[:v] %>').innerHTML=sw_<%= params[:v] %>;
-// tells dom to set div named sw_3 to visible
-blue = document.getElementById('sw_<%= params[:v] %>').style.visibility = 'visible';
 
 // this creates rules for include(file-name) 
 function include(file)
@@ -22,10 +32,24 @@ function include(file)
 // this line runs everything contained within afer script.onload 
     script.onload = function(){$(document).ready(function() { 
       // gets window popup plugin 1. sets window settings, 2. links class name, 3. setunload callback
+
+			
+			// $.get('http://localhost:3000/sites/' + site_id + '/remoteurls/'+ remoteurl_id +'/reviews?' + layout_type, function(data) {
+			// $('#sw_content_3').html(data);
+			// // alert('Load was performed.' + data);
+			// });         
+			$.getScript('http://localhost:3000/audiojs/audio.js', function() 
+			{
+			  audiojs.events.ready(function() {
+			    var as = audiojs.createAll();
+			  });
+			});
+			
+			
 			$.getScript('http://localhost:3000/javascripts/jquery.popupwindow.js', function() 
 			{
 				var profiles = {window800:{height:400,width:400,center:1,status:1,onUnload:unloadcallback}};
-				$(function(){$(".toggle-window").popupwindow(profiles);});
+				$(function(){$(".toggle-button").popupwindow(profiles);});
 				function unloadcallback(){
 					alert("Time to check if your loggedin or not, if so, change dom, if not don't");
 					};
@@ -33,10 +57,10 @@ function include(file)
 
 			//  toggle profile lightbox  
 			$('.toggle-button').click(function() {
-				$('.sw_lanyard_wrapper').toggle('fast');
+				$('.iavouch_lanyard_wrapper').replaceWith( site_id );   
+				$().toggle('fast');
 				return false;
 			}); 
-			
 			
 			
     })}
@@ -50,5 +74,3 @@ include('http://code.jquery.com/jquery-1.5.js');
 
 <% else %>
 <% end %>
-                          
-       

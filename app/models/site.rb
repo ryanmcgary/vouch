@@ -1,5 +1,5 @@
 class Site < ActiveRecord::Base   
-  has_many :urls
+  has_many :remoteurls
   before_validation :create_permalink
   #after_save :rebuild_routes
   #after_destroy :rebuild_routes

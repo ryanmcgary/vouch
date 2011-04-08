@@ -5,13 +5,17 @@
 </head>
 <body>
 	
-	
-	
-	<div id='sw_3' style="color:black;"><div id='sw_content_3'></div></div>
+		
+	<div id='iavouch_3' style="color:black;"><div id='iavouch_content_3'></div></div>
 
 	<script type='text/javascript'>
 	// this line hides visibility of keyword stuffed text
-	document.getElementById('sw_content_3').style.visibility = 'hidden';
+	document.getElementById('iavouch_content_3').style.visibility = 'hidden';
+	var site_id = '7';
+	var remoteurl_id = '1';
+	var version_n = '3';
+	var layout_type = '&layout=embed'; 
+	var widget_width = '700px'; 
 
 	// On window load, calls function which creates script
 	  window.onload = function()       
@@ -22,7 +26,7 @@
 	// sets script as asynchrounus		
 				s.async = true;
 	// sets URL source of javascript		
-				s.src = 'http://localhost:3000/sites/17/lanyard/embed?v=3&layout=embed';
+				s.src = 'http://localhost:3000/sites/7/lanyard/embed?v=3&remoteurl='+ remoteurl_id + layout_type;
 	// creates var x which selects first htmltag <script> in document and labels it x
 				var x = document.getElementsByTagName('script')[0];          
 	// inserts script source mentioned in var s before var x selected above

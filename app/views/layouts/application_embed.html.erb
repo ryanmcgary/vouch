@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vouch</title>
-  <%= stylesheet_link_tag :all %>
+  <title>Vouch</title>           
+  <%= stylesheet_link_tag 'custom' %>
+  <%= stylesheet_link_tag 'reset' %>  
+  <%= stylesheet_link_tag 'text' %>  
   <%= javascript_include_tag :defaults %>
 	<%= javascript_include_tag 'jquery.popupwindow' %>
   <%= csrf_meta_tag %>
@@ -12,16 +14,20 @@
 <%= content_tag :div, msg, :id => key  %>
 <% end %>      
 
-<div id='container'> 
-	<div id="user_nav">Embed
-		<% if user_signed_in? %>
-		Signed in as <%= current_user.email %>. Not you?
-		<%= link_to "Sign out", destroy_user_session_path %>
-		<% else %>
-		<%= link_to "Sign up", authentications_path %> or <%= link_to "Sign in", authentications_path %> or <%= link_to "Login with Twitter", "/auth/twitter?layout=embed" %>
-		<% end %>
+<div id='container'>
+  <div class="grid_6">
+    Add new review
+  </div>
+  <div class="grid_5">
+      Share / Like / 
+      <% if user_signed_in? %>
+  		<%= link_to "Logout", "#{destroy_user_session_path}?layout=embed", :rel => "window800", :class => "auth_popup" %>
+  		<% else %>
+  		<%= link_to "Login", "/authentications/closewindow", :rel => "window800", :class => "auth_popup" %>
+      <% end %> 
+      <p></p>         
+  </div> 
 
-	</div>	
 	
 
 <%= yield %>
@@ -29,3 +35,9 @@
 </div>
 </body>
 </html>
+<script type="text/javascript" charset="utf-8">   
+$('.short-text').click(function() {
+	$('.expand-bottom').slideDown(0.1);
+	return false;
+});
+</script>

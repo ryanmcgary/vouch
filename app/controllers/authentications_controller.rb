@@ -1,5 +1,5 @@
 class AuthenticationsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :create, :destroy]   
+  before_filter :authenticate_user!, :except => [:index, :create, :destroy, :force]   
   # GET /authentications
   # GET /authentications.xml
   def index
@@ -50,6 +50,9 @@ class AuthenticationsController < ApplicationController
   
   def closewindow
     
+  end
+  def force
+
   end
   
   protected 

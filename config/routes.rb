@@ -1,20 +1,23 @@
 Vouch::Application.routes.draw do 
-  resources :urls
 
   match '/auth/:provider/callback' => 'authentications#create'
   match 'authentications/closewindow' => 'authentications#closewindow' 
+  match 'authentications/force' => 'authentications#force' 
   devise_for :users, :controllers => {:registrations => 'registrations'}
               
   resources :authentications                                  
 
   resources :sites do
+    resources :remoteurls do
+      resources :reviews, :only => [:index, :create, :new, :destroy]   
+    end  
     resource :lanyard do
       member do
+        get :full_lanyard
         get :embed
       end
     end
   end
-
 
   
   #  match '/sites/:url' => 'sites#show'

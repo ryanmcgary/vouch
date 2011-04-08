@@ -10,8 +10,8 @@ class LanyardsController < ApplicationController
   end
 
   def embed
-    @site = Site.find(params[:site_id])  
- 
+    @remoteurl = Remoteurl.find(params[:remoteurl]) 
+    
     #@site.(request.env["HTTP_REFERER"], params[:v])    
 
     # /speakers/Scott_Hanselman/badge/embed?v=1

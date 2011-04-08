@@ -10,8 +10,8 @@
 
 <% @sites.each do |site| %>
   <tr>
-    <td><%= site.url %></td>
-    <td><%= link_to 'Show', site %></td>
+    <td><%= site.url %></td>    
+    <td><%= link_to 'Show', site_remoteurls_path(site) %></td>
     <td><%= link_to 'Edit', edit_site_path(site) %></td>
     <td><%= link_to 'Destroy', site, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
