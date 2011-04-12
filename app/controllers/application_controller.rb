@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  protect_from_forgery :only => [:destroy]   
 
   layout :layout_by_resource
     
