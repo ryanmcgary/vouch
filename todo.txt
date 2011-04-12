@@ -25,8 +25,10 @@ x If possible Fill out required profile info using omniauth callback
 
 And most of this
 ! Integrate twilio record call controller/function
-  - Copy paste recording controller into app
-  - Link data to review model
+  x Copy paste recording controller into app
+  - get
+  ? Link data to review model
+  
 
 
 % Create "banner" version
