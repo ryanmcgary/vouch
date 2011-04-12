@@ -9,9 +9,9 @@ Vouch::Application.routes.draw do
   match "/recordings/record.:format"        => "recordings#record"
   match "/recordings/hangup.:format"        => "recordings#hangup" 
   match "/recordings/makecall(.:format)"    => "recordings#makecall"
-   
+ 
   devise_for :users, :controllers => {:registrations => 'registrations'}
-              
+       
   resources :authentications                                  
 
   resources :sites do

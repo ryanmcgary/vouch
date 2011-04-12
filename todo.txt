@@ -22,24 +22,29 @@ x If jones doesn't exist > create
 x Pull profile pictures from services > render yaml or https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema
 x  - Add autofill user info (depending on login service)  
 x If possible Fill out required profile info using omniauth callback
-
-And most of this
-! Integrate twilio record call controller/function
+x Integrate twilio record call controller/function
   x Copy paste recording controller into app
-  - get
-  ? Link data to review model
-  
+  x Get recording function working
+! Make user/edit in RegistrationsController redirect to force close window
+! Add finalized fields to user model
+! Finalize recordings columns
+! Cleanup how devise views look: edit, sign_in
+! Cleanup "leave review" frame
+! Switch reviews to recordings in frame.html
 
-
+% Make permalinks work for site model   
 % Create "banner" version
-% Make permalinks work for site model
-- Add linkedin login    
+% To prevent crossdomain tomfoolery: Parse url using javascript to determine url matches id
+% Add regex cleaning and authentication
+  - signup: clean name on new user account
+  - signup: require phone #
 - Create VAR url > in embed code so a domain can tag multiple index.html pages
 % Create simple sales page (ala freshdesk)
   - home, tour, pricing, signup, blog, about, support
 % Create user Dashboard       
-% To prevent crossdomain tomfoolery: Parse url using javascript to determine url matches id      
 % Get with john on launch/redis
+- Add ability to add auth models from settings popup 
+- Add linkedin login
 
 ? Add multiple social logins during second step of registration
 ? Create admin users with separate registration requirements

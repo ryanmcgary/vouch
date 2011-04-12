@@ -16,6 +16,7 @@ BASE_URL = "http://growing-mist-751.heroku.com/recordings"
 CALLER_ID = '6158525397'   
 
 class RecordingsController < ApplicationController
+    skip_before_filter :verify_authenticity_token, :except => [:destroy, :show]
     before_filter :authenticate_user!, :except => [:show, :index, :trunk, :record, :editrecording, :hangup, :destroy]  
     before_filter :authorized_user, :only => :destroy  
     respond_to :html, :xml  
