@@ -9,8 +9,8 @@ ACCOUNT_TOKEN = '64e5c64955c6b9e1d68f0a9f58b0944b'
 API_VERSION = '2010-04-01'
 
 # base URL of this application
-# BASE_URL = "http://growing-mist-751.heroku.com/recordings"
-BASE_URL = "http://localhost:3000/recordings"  
+BASE_URL = "http://growing-mist-751.heroku.com/recordings"
+# BASE_URL = "http://localhost:3000/recordings"  
 
 # Outgoing Caller ID you have previously validated with Twilio
 CALLER_ID = '6158525397'   
@@ -64,16 +64,16 @@ class RecordingsController < ApplicationController
                   resp.error! unless resp.kind_of? Net::HTTPSuccess               
       
       # save initial form and callid to database
-      resp2 = "324234wer" #hide on remote server    
-      # resp = Hash.from_xml(resp.body)
-      # resp2 = resp['TwilioResponse']['Call']['Sid']
+      # resp2 = "324234wer" #hide on remote server    
+      resp = Hash.from_xml(resp.body)
+      resp2 = resp['TwilioResponse']['Call']['Sid']
       ourform = { :call_id => resp2 }                         
       @recording = current_user.recordings.build(params[:recording])
       @recording[:call_id] = resp2
       if @recording.save
-        render :text => @recording.to_yaml              
+        # render :text => @recording.to_yaml              
         flash[:success] = "Calling #{ current_user.phone_number }... "
-        # redirect_to root_path
+        redirect_to root_path
       end
     end
     
