@@ -1,6 +1,7 @@
 class Remoteurl < ActiveRecord::Base
   belongs_to :site
   has_many :reviews
+  has_many :recordings
   
   before_validation :create_permalink  
   

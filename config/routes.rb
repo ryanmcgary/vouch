@@ -2,7 +2,14 @@ Vouch::Application.routes.draw do
 
   match '/auth/:provider/callback' => 'authentications#create'
   match 'authentications/closewindow' => 'authentications#closewindow' 
-  match 'authentications/force' => 'authentications#force' 
+  match 'authentications/force' => 'authentications#force'
+  match "/recordings/editrecording.:format" => "recordings#editrecording"
+  match "/recordings/trunk.:format"         => "recordings#trunk"
+  match "/recordings/makecall.:format"      => "recordings#makecall"
+  match "/recordings/record.:format"        => "recordings#record"
+  match "/recordings/hangup.:format"        => "recordings#hangup" 
+  match "/recordings/makecall(.:format)"    => "recordings#makecall"
+   
   devise_for :users, :controllers => {:registrations => 'registrations'}
               
   resources :authentications                                  
@@ -10,6 +17,7 @@ Vouch::Application.routes.draw do
   resources :sites do
     resources :remoteurls do
       resources :reviews, :only => [:index, :create, :new, :destroy]   
+      resources :recordings
     end  
     resource :lanyard do
       member do

@@ -5,7 +5,8 @@ gem 'devise'
 gem 'twiliolib'       
 gem 'will_paginate', '~> 3.0.beta'
 gem 'jquery-rails'
-gem 'omniauth'
+gem 'omniauth', '0.2.1'
+gem 'taps'
  
 group :development do
 	gem 'annotate-models', '1.0.4'

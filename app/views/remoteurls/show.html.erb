@@ -23,7 +23,16 @@
       </div>
   </tr>
 </table>
-
+<% form_for("recording", :url => recordings_makecall_path, :html => { :class => "edit_user" } ) do |f| -%>
+	<%= f.hidden_field :remoteurl_id %>
+	<div class="field">
+	<%= f.label :synopsis, "synopsis" %>
+	<%= f.text_field :synopsis, :size => "8" %>
+	</div>
+	<div class="actions">
+	<%= f.submit "Call Me Now!", :id => "user_submit" %>	
+	</div>
+<% end -%>
 
 <% else %>
 <table>

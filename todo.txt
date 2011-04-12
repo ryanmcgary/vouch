@@ -1,3 +1,4 @@
+git@heroku.com:growing-mist-751.git
 TODO:
 FIXME:   
 CHANGED:  
@@ -18,11 +19,10 @@ x install audiojs.zip
 x Make nonexistant urls @ site/1/remote/jones-is-the-latest-blog work
 x Checks for site/1/jones in content
 x If jones doesn't exist > create    
+x Pull profile pictures from services > render yaml or https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema
+x  - Add autofill user info (depending on login service)  
+x If possible Fill out required profile info using omniauth callback
 
-For Friday to be awesome
-! Pull profile pictures from services > render yaml or https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema
-  - Add autofill user info (depending on login service)  
-? If possible Fill out required profile info using omniauth callback
 And most of this
 ! Integrate twilio record call controller/function
   - Copy paste recording controller into app

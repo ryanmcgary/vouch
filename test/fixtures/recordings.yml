@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  audio_file: MyString
+  call_id: MyString
+  synopsis: MyString
+  transcription: MyString
+  call_completed: false
+  remoteurl: 
+  user: 
+
+two:
+  audio_file: MyString
+  call_id: MyString
+  synopsis: MyString
+  transcription: MyString
+  call_completed: false
+  remoteurl: 
+  user: 

@@ -1,5 +1,6 @@
-class RemoteurlsController < ApplicationController
+class RemoteurlsController < ApplicationController                                                     
   before_filter :authenticate_user!, :except => [:index, :new, :create, :edit, :destroy, :update, :show]
+  
   # GET /remoteurls
   # GET /remoteurls.xml
   def index

@@ -1,0 +1,10 @@
+<% if recording.callcompleted? %>
+<div id="box">					
+	<p id="title"><%= recording.alias == '' ? recording.user.name : recording.alias %></p>
+	<p id="context"><%= recording.short_text %></p>
+	<audio id="player2" src="<%= recording.audio_file %>" type="audio/wav" width="72" controls="controls">
+		<p>Your browser leaves much to be desired.</p>			
+	</audio>
+</div>  
+<% else %>
+<% end -%>
