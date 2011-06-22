@@ -74,7 +74,7 @@ class RecordingsController < ApplicationController
       if @recording.save
         # render :text => @recording.to_yaml              
         flash[:success] = "Calling #{ current_user.phone_number }... "
-        redirect_to root_path
+        redirect_to :back
       end
     end
     

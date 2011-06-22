@@ -1,0 +1,158 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+.iavouch_3_reset body, .iavouch_3_reset div, .iavouch_3_reset span, .iavouch_3_reset applet, .iavouch_3_reset object, .iavouch_3_reset iframe, .iavouch_3_reset
+h1, .iavouch_3_reset h2, .iavouch_3_reset h3, .iavouch_3_reset h4, .iavouch_3_reset h5, .iavouch_3_reset h6, .iavouch_3_reset p, .iavouch_3_reset blockquote, .iavouch_3_reset pre, .iavouch_3_reset
+a, .iavouch_3_reset abbr, .iavouch_3_reset acronym, .iavouch_3_reset address, .iavouch_3_reset big, .iavouch_3_reset cite, .iavouch_3_reset code, .iavouch_3_reset
+del, .iavouch_3_reset dfn, .iavouch_3_reset em, .iavouch_3_reset font, .iavouch_3_reset img, .iavouch_3_reset ins, .iavouch_3_reset kbd, .iavouch_3_reset q, .iavouch_3_reset s, .iavouch_3_reset samp, .iavouch_3_reset
+small, .iavouch_3_reset strike, .iavouch_3_reset strong, .iavouch_3_reset sub, .iavouch_3_reset sup, .iavouch_3_reset tt, .iavouch_3_reset var, .iavouch_3_reset
+b, .iavouch_3_reset u, .iavouch_3_reset i, .iavouch_3_reset center, .iavouch_3_reset
+dl, .iavouch_3_reset dt, .iavouch_3_reset dd, .iavouch_3_reset ol, .iavouch_3_reset ul, .iavouch_3_reset li, .iavouch_3_reset
+fieldset, .iavouch_3_reset form, .iavouch_3_reset label, .iavouch_3_reset legend, .iavouch_3_reset
+table, .iavouch_3_reset caption, .iavouch_3_reset tbody, .iavouch_3_reset tfoot, .iavouch_3_reset thead, .iavouch_3_reset tr, .iavouch_3_reset th, .iavouch_3_reset td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+                          
+.iavouch_3_reset div, .iavouch_3_reset p{color:black;}
+.iavouch_3_reset {
+	line-height: 1;
+}
+
+.iavouch_3_reset ol, .iavouch_3_reset ul {
+	list-style: none;
+}
+.iavouch_3_reset blockquote, .iavouch_3_reset q {
+	quotes: none;
+}
+.iavouch_3_reset blockquote:before, .iavouch_3_reset blockquote:after, .iavouch_3_reset
+q:before, .iavouch_3_reset q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+.iavouch_3_reset :focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+.iavouch_3_reset ins {
+	text-decoration: none;
+}
+.iavouch_3_reset del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.iavouch_3_reset table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*
+	960 Grid System ~ Text CSS.
+	Learn more ~ http://960.gs/
+
+	Licensed under GPL and MIT.
+*/
+
+/* =Basic HTML
+--------------------------------------------------------------------------------*/
+
+.iavouch_3_reset
+{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 600;
+  font-weight: normal;
+	font-size:0.9em;
+}
+
+.iavouch_3_reset a:focus
+{
+	outline: 1px dotted invert;
+}
+
+.iavouch_3_reset hr
+{
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px 0 0;
+	clear: both;
+	height: 0;
+}
+
+/* =Headings
+--------------------------------------------------------------------------------*/
+
+.iavouch_3_reset h1
+{
+	font-size: 25px;
+}
+
+.iavouch_3_reset h2
+{
+	font-size: 23px;
+}
+
+.iavouch_3_reset h3
+{
+	font-size: 21px;
+}
+
+.iavouch_3_reset h4
+{
+	font-size: 19px;
+}
+
+.iavouch_3_reset h5
+{
+	font-size: 17px;
+}
+
+.iavouch_3_reset h6
+{
+	font-size: 15px;
+}
+
+/* =Spacing
+--------------------------------------------------------------------------------*/
+
+.iavouch_3_reset ol
+{
+	list-style: decimal;
+}
+
+.iavouch_3_reset ul
+{
+	list-style: square;
+}
+
+.iavouch_3_reset li
+{
+	margin-left: 30px;
+}
+
+.iavouch_3_reset p, .iavouch_3_reset
+dl, .iavouch_3_reset
+hr, .iavouch_3_reset
+h1, .iavouch_3_reset
+h2, .iavouch_3_reset
+h3, .iavouch_3_reset
+h4, .iavouch_3_reset
+h5, .iavouch_3_reset
+h6, .iavouch_3_reset
+ol, .iavouch_3_reset
+ul, .iavouch_3_reset
+pre, .iavouch_3_reset
+table, .iavouch_3_reset
+address, .iavouch_3_reset
+fieldset
+{
+	margin-bottom: 20px;
+}

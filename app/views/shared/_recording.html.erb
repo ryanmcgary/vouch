@@ -1,0 +1,23 @@
+<% if recording.call_completed? %>
+  <div class="comments-each">
+    <table class="review-container">
+      <tr>
+        <td width="64 !important">
+          <img class="profile_pic" src="<%= recording.user.profile_pic %>" width="54 !important" height="54 !important"> 
+        </td>
+        <td class="table-rightside">
+          <p><%= recording.user.full_name %> / <%= recording.user.title %>  @ <%= recording.user.company %> </p>                        
+          <div class="review-each">
+           <audio src="<%= recording.audio_file + ".mp3" %>" preload="none"></audio>
+           <div class="review-left">posted <%= time_ago_in_words(recording.created_at) %> ago.</div>
+           <div class="review-right">share / like / <span class="bold toggle">synopsis</span></div>
+           <div class="clear"></div>
+           <div class="trans">
+            <%= recording.synopsis.empty? ? recording.transcription : recording.synopsis %>
+           </div>
+          </div>
+      </tr>
+    </table>  
+  </div>
+
+<% end %>

@@ -9,17 +9,21 @@
 	<%= javascript_include_tag 'jquery.popupwindow' %>
   <%= csrf_meta_tag %>
 </head>
-<body> 
-<% flash.each do |key, msg| %>	
-<%= content_tag :div, msg, :id => key  %>
-<% end %>      
+<body>      
 
 <div id='container'>
+<!-- todo: remove these from layout  -->
   <div class="grid_6">
+    <% if flash.empty? %>
     Add new review
+    <% else %> 
+      <% flash.each do |key, msg| %>	
+      <%= content_tag :div, msg, :id => key  %>
+      <% end %> 
+    <% end %>
   </div>
   <div class="grid_5">
-      Share / Like / 
+      <%= link_to "Tweet", "http://twitter.com/intent/session?return_to=" + CGI.escape("/intent/tweet?original_referer=#{request.url}&text=Listen+to+my+review!&url=#{request.url}&via=vouch"), :class => "auth_popup" %> / 
       <% if user_signed_in? %>
   		<%= link_to "Logout", "#{destroy_user_session_path}?layout=embed", :rel => "window800", :class => "auth_popup" %>
   		<% else %>

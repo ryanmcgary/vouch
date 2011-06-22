@@ -1,19 +1,27 @@
-<h2>Sign up</h2>
-<% (what = session[:omniauth] && session[:omniauth]['user_info']).nil? ? nil : '' %> 
+<% (what = session[:omniauth] && session[:omniauth]['user_info']).nil? ? nil : '' %>      
+<div id="name">
+<h2>Sign up</h2> 
+</div>
 
-
+<div class="devise_form"> 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
   
-  <%= image_tag (what.nil? ? "" : what['image']), :title => "title", :class => "class" %>
+  <%= f.label :full_name %>
+  <%= f.text_field :full_name, :value => (what.nil? ? "" : what['name']) %>
   
-  <p><%= f.label :name %><br />
-  <%= f.text_field :name, :value => (what.nil? ? "" : what['name']) %></p>
+  <%= f.label :email %> 
+  <%= f.text_field :email, :value => (what.nil? ? "" : what['email']) %>            
   
-  <p><%= f.label :email %> 
-  <%= f.text_field :email, :value => (what.nil? ? "" : what['email']) %></p> 
-
+  <%= f.label :company %>
+  <%= f.text_field :company %>
+                                  
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+   
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number, :value => (what.nil? ? "" : what['phone']) %>
   
+  <%= image_tag (what.nil? ? "" : what['image']), :title => "title", :class => "class" %>  
 <% if @user.password_required? %>
   <p><%= f.label :password %><br />
   <%= f.password_field :password %></p>
@@ -26,3 +34,8 @@
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+</div> 
+
+<div class="devise_errors">
+  <%= devise_error_messages! %>   
+</div>

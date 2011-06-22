@@ -2,11 +2,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery #:only => [:destroy]   
 
   layout :layout_by_resource
-    
+      
     def layout_by_resource
-      if params[:layout] == "embed"
-        @application_layout = "application_embed"   
-      elsif devise_controller?
+      if devise_controller?
+        @application_layout = "blank_devise"
+      elsif params[:layout] == "embed"
         @application_layout = "application_embed"   
       else 
         "application"
@@ -26,5 +26,13 @@ class ApplicationController < ActionController::Base
         else
           super
         end
+      end 
+      
+      def after_update_path_for(resource)
+        if params[:layout] == "embed"
+          "/authentications/force" 
+        else
+          root_path
+        end 
       end
 end

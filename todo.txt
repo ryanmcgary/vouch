@@ -25,32 +25,67 @@ x If possible Fill out required profile info using omniauth callback
 x Integrate twilio record call controller/function
   x Copy paste recording controller into app
   x Get recording function working
-! Make user/edit in RegistrationsController redirect to force close window
-! Add finalized fields to user model
-! Finalize recordings columns
-! Cleanup how devise views look: edit, sign_in
-! Cleanup "leave review" frame
-! Switch reviews to recordings in frame.html
+x Finalize recordings columns
+x Add finalized fields (and require them) to user model / New / Edit
+x  - Company, Job Title, Email, Phone (pulls from auth if avail), Location?, twitter account?, description, image, webpages?
+x Cleanup how devise views look: edit, sign_in
+x Data in remoteurl_id needs to be standardized somehow    
+x Cleanup "leave review" frame
+x Switch reviews to recordings in frame.html
+x Make IFRAME have loggedin/out modes
+  x Add popup link to settings in IFRAME > When loggedin
+  x Add Profile_pic when logged in 
+x make current pic dynamic no user pic found revert to outline
+x Add tweet popup           
+x Make "Showing 12 reviews" work / or no reviews
+x Make show/hide synopsis / text work show transcript if synopsis nil wrap in <div class=text>
+x Make user/edit in RegistrationsController redirect to force close window 
+x Make "start call" form redirect to something not weird
+x Make how to leave perfect review popup
+x Prevent people from deleting user account (_full_lanyard fails on user delete)
+x Make embed's auto resize
+  x slider version
+  x regular version
+x Give css unique ID's to prevent interference
+  x change all css to .avouch-css-class from .class
+  - Make sure clear files clear everything / Figure out how to keep css separate
+  - create mixin for slider   
+    x slider
+  x regular: Use class based reset(finish this up and standardize to slider) 
+- Make JS/JQuery non-conflict with parent pages  
+! Make permalinks work for site model
+   - No spaces allowed when creating site
+% Current method of creating Remoteurls
+  - Finds IFRAME SHOW /remoteurl/"sight id no spaces" (in permalink field) if can't find it, it creates permalink "sight_id_no_spaces" and redirects to permalink
+  - Display ""
+! Create "banner" version  
+    x Design mockup banner
+    - Create banner_Embed.js
+    - Create _banner_full_lanyard
+    - Create banner_embed layout
+    - Create banner_embed test frame
 
-% Make permalinks work for site model   
-% Create "banner" version
-% To prevent crossdomain tomfoolery: Parse url using javascript to determine url matches id
-% Add regex cleaning and authentication
+! Add regex cleaning and authentication
   - signup: clean name on new user account
   - signup: require phone #
 - Create VAR url > in embed code so a domain can tag multiple index.html pages
 % Create simple sales page (ala freshdesk)
   - home, tour, pricing, signup, blog, about, support
+  - static example review
 % Create user Dashboard       
 % Get with john on launch/redis
 - Add ability to add auth models from settings popup 
 - Add linkedin login
+- Add share / like popups           
+% Prevent crossdomain tomfoolery: Parse url using javascript to determine url matches id, create whitelist feature 
 
 ? Add multiple social logins during second step of registration
 ? Create admin users with separate registration requirements
       
 Not needed for launch
+  - Save css into field per site       
   ! Make logout happen within iframe (nopopup required)
+  - Allow code based invite for high-profile People/Email addresses
   ? Add recording in progress state
   ? Add recording finished state
   ? convert site to mongoid 

@@ -1,28 +1,74 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="devise_form">
+<% if !params[:layout].nil? %>
+  <%= form_for(resource, :as => resource_name, :url => "#{registration_path(resource_name)}?layout=embed", :html => { :method => :put }) do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
 
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+    <%= f.label :full_name %>
+    <%= f.text_field :full_name %>             
 
-  <p><%= f.label :phone_number %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.text_field :phone_number %></p>
+    <%= f.label :company %>
+    <%= f.text_field :company %>
 
-  <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password %></p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
 
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
+    <%= image_tag current_user.profile_pic, :title => "title", :class => "class" %>
+  <!--   <p><#%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <#%= f.password_field :password %></p>
 
-  <p><#%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <#%= f.password_field :current_password %></p>
-  # TODO: clean this page up with correct info
-  <p><%= f.submit "Update" %></p>
-<% end %>
+    <p><#%= f.label :password_confirmation %><br />
+    <#%= f.password_field :password_confirmation %></p>
 
-<h3>Cancel my account</h3>
+    <p><#%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <#%= f.password_field :current_password %></p> -->
+    <!-- # TODO: pretty page up        -->
+    <p><%= f.submit "Update" %></p>
+    <% end %>
+  <% else %>
+  
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
 
-<%= link_to "Back", :back %>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+
+    <%= f.label :full_name %>
+    <%= f.text_field :full_name %>             
+
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= image_tag current_user.profile_pic, :title => "title", :class => "class" %>
+  <!--   <p><#%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <#%= f.password_field :password %></p>
+
+    <p><#%= f.label :password_confirmation %><br />
+    <#%= f.password_field :password_confirmation %></p>
+
+    <p><#%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <#%= f.password_field :current_password %></p> -->
+    <!-- # TODO: pretty page up        -->
+    <p><%= f.submit "Update" %></p>
+    <% end %>
+  <% end %>
+
+  <!-- <h3>Cancel my account</h3>
+
+  <p>Unhappy? <#%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p> -->
+
+  <%= link_to "Back", :back %>
+</div> 
+<div class="devise_errors">
+  <%= devise_error_messages! %>   
+</div>
+

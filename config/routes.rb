@@ -10,7 +10,7 @@ Vouch::Application.routes.draw do
   match "/recordings/hangup.:format"        => "recordings#hangup" 
   match "/recordings/makecall(.:format)"    => "recordings#makecall"
  
-  devise_for :users, :controllers => {:registrations => 'registrations'}
+  devise_for :users, :controllers => { :registrations => 'registrations' }
        
   resources :authentications                                  
 
@@ -18,11 +18,12 @@ Vouch::Application.routes.draw do
     resources :remoteurls do
       resources :reviews, :only => [:index, :create, :new, :destroy]   
       resources :recordings
-    end  
+    end
     resource :lanyard do
       member do
         get :full_lanyard
         get :embed
+        get :slider_embed
       end
     end
   end

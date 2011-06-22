@@ -1,12 +1,12 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.1'
-gem 'devise'
+gem 'devise' 
 gem 'twiliolib'       
 gem 'will_paginate', '~> 3.0.beta'
 gem 'jquery-rails'
 gem 'omniauth', '0.2.1'
-gem 'taps'
+gem 'taps' 
  
 group :development do
 	gem 'annotate-models', '1.0.4'
@@ -16,6 +16,8 @@ end
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
+# warden (1.0.3, 0.10.7) devise (1.1.7, 1.1.3)
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

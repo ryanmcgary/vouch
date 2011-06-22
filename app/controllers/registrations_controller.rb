@@ -10,9 +10,9 @@ class RegistrationsController < Devise::RegistrationsController
     if resource.update_attributes(params[resource_name])
       set_flash_message :notice, :updated
       # Line below required if using Devise >= 1.2.0
-      # sign_in resource_name, resource, :bypass => true 
+      sign_in resource_name, @user, :bypass => true 
       redirect_to after_update_path_for(resource)
-      # TODO: Change redirect to force close
+      # TODO: Change redirect to force
     else
       clean_up_passwords(resource)
       render_with_scope :edit
