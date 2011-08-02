@@ -14,6 +14,8 @@ ifrm.style.height = "183px";
 ifrm.style.border ="0";  
 ifrm.id = "coolframe"
 
+
+
 // Puts ADD NEW REVIEW IFRAME ON TOP OF OR BELOW REVIEWS
 if (typeof add_review_bottom === 'undefined') {
 		document.getElementById('iavouch_<%= params[:v] %>').insertBefore(ifrm, iavouch_content_3);  
@@ -47,15 +49,15 @@ function include(file)
 			// $('#sw_content_3').html(data);
 			// // alert('Load was performed.' + data);
 			// });         
+
+
 			$.getScript('http://localhost:3000/audiojs/audio.js', function() 
 			{
-			  audiojs.events.ready(function() {
-			    var as = audiojs.createAll();
-			  });
+			  var as = audiojs.createAll();
 			  $('.audiojs').width(widget_width - 78);  
-	      $('.audiojs .loaded').width(widget_width - 232); 
-	      $('.audiojs .scrubber').width(widget_width - 232);
-			});
+				      $('.audiojs .loaded').width(widget_width - 232); 
+				      $('.audiojs .scrubber').width(widget_width - 232);
+			});   
 			
 			
 			$.getScript('http://localhost:3000/javascripts/jquery.popupwindow.js', function() 

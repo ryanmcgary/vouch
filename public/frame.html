@@ -1,6 +1,6 @@
 <html>
 <head>
-
+   <script type="text/javascript" src="http://localhost:3000/audiojs/audio.js"></script>
 	
 </head>
 <body>
@@ -11,9 +11,10 @@
 	<script type='text/javascript'>
 	// this line hides visibility of keyword stuffed text
 	document.getElementById('iavouch_content_3').style.visibility = 'hidden';
-	var site_id = '7';
-	var remoteurl_id = 'blond_fashion_flue';
+	var site_id = 'test';
+	var remoteurl_id = 'blond_jones_flue';
 	var version_n = '3';
+	var embed_type = 'embed';     
 	var layout_type = '&layout=embed'; 
 	var widget_width = '450';
   // var add_review_bottom = '1';
@@ -27,13 +28,15 @@
 	// sets script as asynchrounus		
 				s.async = true;
 	// sets URL source of javascript		
-				s.src = 'http://localhost:3000/sites/7/lanyard/embed?v=3&remoteurl='+ remoteurl_id + layout_type;
+        s.src = 'http://localhost:3000/sites/7/lanyard/' + embed_type + '?v=3&remoteurl='+ remoteurl_id + layout_type;  
 	// creates var x which selects first htmltag <script> in document and labels it x
 				var x = document.getElementsByTagName('script')[0];          
 	// inserts script source mentioned in var s before var x selected above
 				x.parentNode.insertBefore(s, x);
 			}
 	</script>
+
+
 
 
 </body>

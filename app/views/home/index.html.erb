@@ -1,0 +1,19 @@
+<div class="columns">
+  <div id="home-splash">
+    <div id="home-box">
+      <div id="splash-content">
+        <p id="logo">IAvouch</p>
+        <p>Request an Invite</p>
+        <form action="home_submit" method="get" accept-charset="utf-8">
+          <input type="text" name="email-invite" id="email-text"></input><input type="submit" id="email-invite" value="request">
+        </form>
+        <p>Have an Invite? Login with social media.</p>
+        <p class="splash-login"><% if !user_signed_in? %>
+ 
+ 
+        <%= link_to "facebook", "/auth/twitter" %>  &nbsp;<%= link_to "twitter", "/auth/twitter" %>  &nbsp;<%= link_to "linkedin", authentications_path %>
+    		<% end %></p>
+      </div>
+    </div>
+  </div>  
+</div>

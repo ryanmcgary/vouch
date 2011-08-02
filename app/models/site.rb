@@ -1,11 +1,15 @@
 class Site < ActiveRecord::Base   
   has_many :remoteurls
+  belongs_to :user
+  
   before_validation :create_permalink
   #after_save :rebuild_routes
   #after_destroy :rebuild_routes
   
   validates :url,       :presence     => true,
                         :length       => { :maximum  => 50 }
+  validates_uniqueness_of :permalink, :on => :create, :message => "must be unique"
+  
                                               
   def create_permalink
     if self.permalink.blank?
@@ -27,8 +31,10 @@ class Site < ActiveRecord::Base
     res = res.gsub('.','')        # remove periods
     res = res.gsub(',','')        # remove commas
     return res
+  end 
+  
+  def to_param
+    permalink
   end
-  def rebuild_routes
-    Vouch::Application.reload_routes!
-  end                                          
+                                        
 end

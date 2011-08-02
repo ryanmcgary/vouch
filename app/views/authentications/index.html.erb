@@ -20,7 +20,7 @@
 <% else %>
   <p><strong>Sign in through one of these services:</strong></p>
 <% end %>
-<% if params[:layout].nil? %>
+
 <a href="/auth/twitter" class="auth_provider" rel="window800">
   <%= image_tag "authbuttons/twitter_64.png", :size => "64x64", :alt => "Twitter" %>
   Twitter
@@ -29,11 +29,6 @@
   <%= image_tag "authbuttons/facebook_64.png", :size => "64x64", :alt => "Facebook" %>
   Facebook
 </a>
-<% else %>
-<a href="/authentications/closewindow" class="auth_provider" rel="window800">
-  <%= image_tag "authbuttons/presently_64.png", :size => "64x64", :alt => "Facebook" %>
-  Login
-</a>
-<% end %>
+
 <div class="clear"></div>
 <b>Don't use one of these services? </b> <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %> with a password.

@@ -15,9 +15,10 @@ table, .iavouch_3_reset caption, .iavouch_3_reset tbody, .iavouch_3_reset tfoot,
 	padding: 0;
 	border: 0;
 	outline: 0;
-	font-size: 100%;
 	vertical-align: baseline;
 	background: transparent;
+	font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
 }
                           
 .iavouch_3_reset div, .iavouch_3_reset p{color:black;}
@@ -65,13 +66,16 @@ q:before, .iavouch_3_reset q:after {
 /* =Basic HTML
 --------------------------------------------------------------------------------*/
 
-.iavouch_3_reset
-{
+.iavouch_3_reset .iavouch_mast
+{ 
+	font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 600;
   font-weight: normal;
-	font-size:0.9em;
-}
+	font-size:1em; 
+	font-weight: normal;
+	font-size: 15px;    
+}     
+
 
 .iavouch_3_reset a:focus
 {

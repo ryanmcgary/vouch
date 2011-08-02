@@ -1,0 +1,5 @@
+.columns .showborder {
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 1px 1px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 1px 1px inset;
+  -o-box-shadow: rgba(0, 0, 0, 0.8) 0 0 1px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 0 1px 1px inset; }

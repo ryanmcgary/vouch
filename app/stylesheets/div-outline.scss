@@ -1,0 +1,12 @@
+@import "compass/css3";                
+
+
+
+.columns
+{
+
+	.showborder{@include box-shadow(rgba(black, 0.8) 0 0 1px 1px inset);}
+  #header, #footer {}
+  #sidebar {}
+  #main-content {} 
+}

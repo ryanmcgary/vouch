@@ -3,8 +3,12 @@ class SitesController < ApplicationController
   # GET /sites
   # GET /sites.xml
   def index
-    @sites = Site.all
-
+    if current_user.nil? # .id == 21
+      @sites = Site.all
+    else
+      @sites = current_user.sites.all
+    end  
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @sites }
@@ -17,7 +21,7 @@ class SitesController < ApplicationController
     #@site = Site.find(params[:id])
     #@site = Site.first(:conditions => {:permalink => params[:id]})
 
-    @site = Site.find(params[:id])  
+    @site = Site.find_by_permalink(params[:id])  
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @site }
@@ -37,7 +41,7 @@ class SitesController < ApplicationController
 
   # GET /sites/1/edit
   def edit
-    @site = Site.find(params[:id])
+    @site = Site.find_by_permalink(params[:id])
 
     #@site = Site.find_by_permalink(params[:permalink])
   end
@@ -45,11 +49,11 @@ class SitesController < ApplicationController
   # POST /sites
   # POST /sites.xml
   def create
-    @site = Site.new(params[:site])
+    @site = current_user.sites.build(params[:site])
 
     respond_to do |format|
       if @site.save
-        format.html { redirect_to(@site, :notice => 'Site was successfully created.') }
+        format.html { redirect_to(root_path, :notice => 'Site was successfully created.') }
         format.xml  { render :xml => @site, :status => :created, :location => @site }
       else
         format.html { render :action => "new" }
@@ -61,7 +65,7 @@ class SitesController < ApplicationController
   # PUT /sites/1
   # PUT /sites/1.xml
   def update
-    @site = Site.find(params[:id])
+    @site = Site.find_by_permalink(params[:id])
 
     respond_to do |format|
       if @site.update_attributes(params[:site])
@@ -77,7 +81,7 @@ class SitesController < ApplicationController
   # DELETE /sites/1
   # DELETE /sites/1.xml
   def destroy
-    @site = Site.find(params[:id])
+    @site = Site.find_by_permalink(params[:id])
     @site.destroy
 
     respond_to do |format|

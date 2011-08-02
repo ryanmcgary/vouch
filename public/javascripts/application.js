@@ -4,6 +4,4 @@
  $(function(){$(".auth_popup").popupwindow(profiles);});
  function unloadcallback(){location.reload();
  document.getElementById('coolframe').contentWindow.history.back(-1);
- 	};              
-
-
+ 	};

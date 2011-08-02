@@ -1,0 +1,102 @@
+
+<div class="top-spacer"></div>
+ 
+  <div class="columns"> 
+
+    <div class="showborder" id="header">
+      <p class="showborder" id="logo">Avouch</p>     		
+      <p id="user-status">
+        <% if user_signed_in? %>
+        <%= current_user.email %> <%= link_to "Sign out", destroy_user_session_path %>
+        <% end %>
+      </p>
+    </div>
+    <div class="showborder" id="sidebar">
+      <ul class="showborder" id="sidebar-menu">
+        <li class="showborder">
+        <a href="#">Administration</a>  
+        </li>          
+        <li class="showborder">
+        <a href="#">Moderation</a>  
+        </li>
+        <li class="showborder">
+        <a href="#" class="selected">Install</a>
+        <div class="site-list">
+        <a href="#" class="sites">washingtonspeakers</a>      
+        <a href="#" class="sites selected">iavouch</a>                 
+        <a href="#" class="sites">add new site +</a>          
+        </div>
+        </li>
+      </ul>
+    </div>                       
+    <div class="showborder" id="main-content">
+      <h2>Universal Install Code</h2>
+      <h3>Step 1: Configure</h3>
+      <table>
+      <tr> 
+        <th><label for="comment-style">Style </label></th> 
+        <td class="comment-style"><input type="checkbox" checked="checked" id=""/></td>
+        
+        <th><label class="comment-location" for="comment-location">Comment Location </label></th> 
+        <td class="comment-location"><input type="checkbox" checked="checked" id="toggle-top-bottom"/></td> 
+        
+        <th><label for="comment-width">Width </label></th> 
+        <td class="comment-width"><input type="text" size="4" cols="4" maxlength="4" id="pixel-width" value="450"/><span id="px">px</span></td>
+      </tr>  
+      </table>
+      <h3>Step 2: Preview</h3>
+<div id="embed-container">
+  <div class="blog-style-embed">
+    <iframe src="embed-demo/blog-reviews.html" id="blog-frame" style="width:100%;height:435px;"></iframe>          
+  </div>
+
+  <div class="banner-style-embed">
+    <iframe src="../Version 4 Slider/slider.html" id="banner-frame" style="width:100%;height:130px;"></iframe>      
+  </div>                                                                                                                      
+  
+</div>              
+      <h3>Step 3: Install</h3>
+      <p>This is the JavaScript embed code which loads and displays Iavouch on your site, typically on the individual article or post pages.
+      </p>
+      <p><b>Note: </b>Every remoteurl_id must be unique when before pasting this into a webpage.</p>
+      <div class="showborder" id="embed-code-container">
+        <pre id="embed-code">
+&lt;div id='iavouch_3' class=&quot;iavouch_3_reset&quot; style=&quot;color:black;&quot;&gt;&lt;div id='iavouch_content_3'&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;script type='text/javascript'&gt;
+
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var remoteurl_id = '<b style="font-weight:600;">remoteurl_id</b>'; // required: replace "remoteurl_id" with a unique identifier for each page  
+      var site_id = 'test';
+      var version_n = '3';
+      var embed_type = '<span class="var-embed-type">embed</span><span class="var-embed-type" style="display:none;">banner-embed</span>';
+      var layout_type = '&amp;layout=embed'; 
+      var widget_width = '<span id="var-review-width">450</span>';
+      <span id="var-review-bottom" style="display:none;">var add_review_bottom = '1';</span>
+      
+       /* * * DON'T EDIT BELOW THIS LINE * * */
+       document.getElementById('iavouch_content_3').style.visibility = 'hidden';
+       window.onload = function()       
+       {var s = document.createElement('script');
+       s.type = 'text/javascript';  
+       s.async = true; 
+       s.src = 'http://localhost:3000/sites/7/lanyard/' + embed_type + '?v=3&amp;remoteurl='+ remoteurl_id + layout_type;
+       var x = document.getElementsByTagName('script')[0];          
+       x.parentNode.insertBefore(s, x);}
+&lt;/script&gt;
+      </pre>
+      </div> 
+    </div>
+    <div id="footer">
+      
+    </div>
+  </div>
+  
+<div class="clear"></div>
+<div class="footer-bottom">
+  <div id="footer">
+     sdfsd
+  </div>
+</div>   
+<div class="footer-bottom-bottom">
+
+</div>

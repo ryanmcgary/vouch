@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110412225132) do
+ActiveRecord::Schema.define(:version => 20110627212933) do
 
   create_table "authentications", :force => true do |t|
     t.integer   "user_id"
@@ -53,10 +53,11 @@ ActiveRecord::Schema.define(:version => 20110412225132) do
   add_index "reviews", ["remoteurl_id"], :name => "index_reviews_on_remoteurl_id"
 
   create_table "sites", :force => true do |t|
-    t.string    "url"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "permalink"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "permalink"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
